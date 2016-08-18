@@ -113,10 +113,10 @@ public class ConsoleProxy extends Thread {
 
         if( configurationManager != null )
         {
-            Iterator hosts = configurationManager.getHosts().iterator();
+            Iterator<Host> hosts = configurationManager.getHosts().iterator();
             while( hosts.hasNext() )
             {
-                Host host = (Host) hosts.next();
+                Host host = hosts.next();
                 new Proxy( configurationManager, host ).startProxy();
             }
             
